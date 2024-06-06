@@ -33,7 +33,7 @@
             <img class="z-index-2 onerror-logo" height="40" src="{{ getValidImage(path: "storage/app/public/company/".$e_commerce_logo, type:'backend-logo') }}" alt="Logo">
         </a>
 
-        <div class="row justify-content-center">
+        <div class="row justify-content-center bg bg-primary">
             <div class="col-md-7 col-lg-5">
                 <div class="card card-lg mb-5">
                     <div class="card-body">
