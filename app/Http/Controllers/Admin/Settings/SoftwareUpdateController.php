@@ -45,15 +45,6 @@ class SoftwareUpdateController extends Controller
         $this->setEnvironmentValue(envKey: 'BUYER_USERNAME', envValue: $request['username']);
         $this->setEnvironmentValue(envKey: 'PURCHASE_CODE', envValue: $request['purchase_key']);
 
-        $data = $this->actch();
-        try {
-            if (!$data->getData()->active) {
-                return redirect(base64_decode('aHR0cHM6Ly82YW10ZWNoLmNvbS9zb2Z0d2FyZS1hY3RpdmF0aW9u'));
-            }
-        } catch (Exception $exception) {
-            Toastr::error(translate('verification_failed_try_again'));
-            return back();
-        }
 
         $file = $request->file('update_file');
         $fileName = 'update.' . $file->getClientOriginalExtension();
